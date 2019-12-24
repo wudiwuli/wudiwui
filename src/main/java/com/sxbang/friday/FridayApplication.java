@@ -11,6 +11,7 @@ public class FridayApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(FridayApplication.class, args);
+        //jjjj
     }
 
 }
