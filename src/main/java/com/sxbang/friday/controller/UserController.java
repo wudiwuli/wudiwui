@@ -85,10 +85,10 @@ public class UserController {
 	String pattern = "yyyy-MM-dd";
 
 	//只需要加上下面这段即可，注意不能忘记注解
-	@InitBinder
-	public void initBinder(WebDataBinder binder, WebRequest request) {
-		binder.registerCustomEditor(Date.class, new CustomDateEditor(new SimpleDateFormat(pattern), true));// CustomDateEditor为自定义日期编辑器
-	}
+//	@InitBinder
+//	public void initBinder(WebDataBinder binder, WebRequest request) {
+//		binder.registerCustomEditor(Date.class, new CustomDateEditor(new SimpleDateFormat(pattern), true));// CustomDateEditor为自定义日期编辑器
+//	}
 
     @GetMapping(value = "/edit")
     @ApiOperation(value = "用户编辑页面", notes = "跳转到用户信息编辑页面")//描述
@@ -122,7 +122,7 @@ public class UserController {
     @GetMapping(value = "/delete")
     @ResponseBody
 	@PreAuthorize("hasAuthority('sys:user:del')")
-    @ApiOperation(value = "删除用户信息", notes = "删除用户信息")//描述
+    @ApiOperation(value = "删除用户信息", notes = "删除用户信息111")//描述
     @ApiImplicitParam(name = "userDto", value = "用户实体类", required = true, dataType = "UserDto")
     public Results<SysUser> deleteUser( UserDto userDto) {
         userService.deleteUser(userDto.getId());

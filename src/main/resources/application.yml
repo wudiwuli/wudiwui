@@ -31,6 +31,9 @@ spring:
     # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
 
+  mvc:
+    date-format: yyyy-MM-dd
+
 mybatis:
   type-aliases-package: com.sxbang.friday.model
   mapper-locations: classpath:/mybatis-mappers/*
@@ -44,6 +47,7 @@ api-url: /api
 #  expire:
 #    seconds: 7200
 #  jwtSecret: (XIAO:)_$^11244^%$_(WEI:)_@@++--(LAO:)_++++_.sds_(SHI:)
+
 
 server:
   port: 8080
